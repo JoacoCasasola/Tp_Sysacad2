@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New SysAcad</title>
+    <style>
+        table.border {
+            border-collapse: collapse;
+        }
+
+            table.border th {
+                padding: 5px;
+                border: 1px solid black;
+            }
+
+            table.border td {
+                padding: 5px;
+                border: 1px solid black;
+            }
+    </style>
+</head>
+
+<body>
+    <table style="width:100%">
+
+        <tr>
+            <td style="width: 20%"></td>
+            <td style="width: 60%" align="center">
+                <table>
+                    <tr><td align="center">UTN AVELLANEDA</td></tr>
+                    <tr><td align="center">Direccion: Av. Bartolomé Mitre 750</td></tr>
+                    <tr><td align="center">Telefono: 11 4201-4133</td></tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr><td colspan="3" height="20"> </td></tr>
+
+        <tr>
+            <td colspan="2">
+                <table style="width: 100%">
+                    <tr>
+                        <td colspan="1" style="width:20%">Administrador/a:</td>
+                        <td colspan="3" style="width:80%;border-bottom:1px solid black">@Admin</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="width:20%">ID del admin:</td>
+                        <td colspan="1" style="width:30%;border-bottom:1px solid black">@ID</td>
+                        <td colspan="2" style="width:20%;text-align: left">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fecha: <span style="text-decoration:underline">@Fecha</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="width:20%">Curso:</td>
+                        <td colspan="1" style="width:80%;border-bottom:1px solid black">@Curso</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr><td colspan="3" height="20"> </td></tr>
+
+        <tr>
+            <td colspan="3">
+                <table class="border" style="width:100%">
+                    <thead style="background-color:lightgrey">
+                        <tr>
+                            <th>Nº</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>DNI</th>
+                            <th>Legajo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @Filas
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+
+    </table>
+
+
+</body>
+</html>

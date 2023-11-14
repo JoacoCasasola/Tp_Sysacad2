@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4DF004F8-2450-4750-B4D4-A2AC9FAC343E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Forms2</RootNamespace>
+    <AssemblyName>Forms2</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.13.3\lib\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConsultaDeHorarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaDeHorarios.Designer.cs">
+      <DependentUpon>ConsultaDeHorarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditarCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarCurso.Designer.cs">
+      <DependentUpon>EditarCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEliminarCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEliminarCurso.Designer.cs">
+      <DependentUpon>FormEliminarCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegistrarAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistrarAdmin.Designer.cs">
+      <DependentUpon>FormRegistrarAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegistrarAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistrarAlumno.Designer.cs">
+      <DependentUpon>FormRegistrarAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegistrarCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistrarCurso.Designer.cs">
+      <DependentUpon>FormRegistrarCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegistrarProfesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistrarProfesor.Designer.cs">
+      <DependentUpon>FormRegistrarProfesor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoAdmin.Designer.cs">
+      <DependentUpon>InfoAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoAlumno.Designer.cs">
+      <DependentUpon>InfoAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoCursos.Designer.cs">
+      <DependentUpon>InfoCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoProfesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoProfesor.Designer.cs">
+      <DependentUpon>InfoProfesor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InscripcionACurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InscripcionACurso.Designer.cs">
+      <DependentUpon>InscripcionACurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginAdmin.Designer.cs">
+      <DependentUpon>LoginAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginAlumno.Designer.cs">
+      <DependentUpon>LoginAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginProfesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginProfesor.Designer.cs">
+      <DependentUpon>LoginProfesor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NuevaClaveAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevaClaveAlumno.Designer.cs">
+      <DependentUpon>NuevaClaveAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NuevaClaveAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevaClaveAdmin.Designer.cs">
+      <DependentUpon>NuevaClaveAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NuevaClaveProfesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevaClaveProfesor.Designer.cs">
+      <DependentUpon>NuevaClaveProfesor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PanelAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PanelAdmin.Designer.cs">
+      <DependentUpon>PanelAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PanelProfesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PanelProfesor.Designer.cs">
+      <DependentUpon>PanelProfesor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PanelAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PanelAlumno.Designer.cs">
+      <DependentUpon>PanelAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistraNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistraNotas.Designer.cs">
+      <DependentUpon>RegistraNotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteAlumnosCarrera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteAlumnosCarrera.Designer.cs">
+      <DependentUpon>ReporteAlumnosCarrera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteAlumnosCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteAlumnosCurso.Designer.cs">
+      <DependentUpon>ReporteAlumnosCurso.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ConsultaDeHorarios.resx">
+      <DependentUpon>ConsultaDeHorarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarCurso.resx">
+      <DependentUpon>EditarCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEliminarCurso.resx">
+      <DependentUpon>FormEliminarCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistrarAdmin.resx">
+      <DependentUpon>FormRegistrarAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistrarAlumno.resx">
+      <DependentUpon>FormRegistrarAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistrarCurso.resx">
+      <DependentUpon>FormRegistrarCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistrarProfesor.resx">
+      <DependentUpon>FormRegistrarProfesor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoAdmin.resx">
+      <DependentUpon>InfoAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoAlumno.resx">
+      <DependentUpon>InfoAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoCursos.resx">
+      <DependentUpon>InfoCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoProfesor.resx">
+      <DependentUpon>InfoProfesor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InscripcionACurso.resx">
+      <DependentUpon>InscripcionACurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginAdmin.resx">
+      <DependentUpon>LoginAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginAlumno.resx">
+      <DependentUpon>LoginAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginProfesor.resx">
+      <DependentUpon>LoginProfesor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevaClaveAlumno.resx">
+      <DependentUpon>NuevaClaveAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevaClaveAdmin.resx">
+      <DependentUpon>NuevaClaveAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevaClaveProfesor.resx">
+      <DependentUpon>NuevaClaveProfesor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelAdmin.resx">
+      <DependentUpon>PanelAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelProfesor.resx">
+      <DependentUpon>PanelProfesor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelAlumno.resx">
+      <DependentUpon>PanelAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RegistraNotas.resx">
+      <DependentUpon>RegistraNotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteAlumnosCarrera.resx">
+      <DependentUpon>ReporteAlumnosCarrera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteAlumnosCurso.resx">
+      <DependentUpon>ReporteAlumnosCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-UTN-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-UTN-11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Generic\Generic.csproj">
+      <Project>{704375f8-8cf5-4029-a67e-0207e11f08e2}</Project>
+      <Name>Generic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\libreriaClases\libreriaClases.csproj">
+      <Project>{a535c51a-3ebe-4f93-aa56-9acf589e4e36}</Project>
+      <Name>libreriaClases</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plantilla.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo-UTN-Avellaneda-1.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

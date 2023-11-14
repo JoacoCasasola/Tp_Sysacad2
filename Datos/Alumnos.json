@@ -1,0 +1,101 @@
+[
+  {
+    "Nombre": "Ramiro",
+    "Apellido": "Martinez",
+    "DNI": "23567345",
+    "Correo": "rami@gmail.com",
+    "Telefono": "11231231",
+    "Direccion": "calle 232",
+    "Carrera": "TUP",
+    "Legajo": "11",
+    "Clave": "11"
+  },
+  {
+    "Nombre": "Mariano",
+    "Apellido": "Casas",
+    "DNI": "35789908",
+    "Correo": "marian@gmail.com",
+    "Telefono": "11678345",
+    "Direccion": "calle 67",
+    "Carrera": "TUP",
+    "Legajo": "2",
+    "Clave": "2"
+  },
+  {
+    "Nombre": "Joaquin",
+    "Apellido": "Casasola",
+    "DNI": "45302811",
+    "Correo": "joaco@gmail.com",
+    "Telefono": "11789456",
+    "Direccion": "calle 2880",
+    "Carrera": "TUP",
+    "Legajo": "3",
+    "Clave": "2003"
+  },
+  {
+    "Nombre": "Maria",
+    "Apellido": "Venitez",
+    "DNI": "37456289",
+    "Correo": "mari@gmail.com",
+    "Telefono": "11789654",
+    "Direccion": "Calle 456",
+    "Carrera": "TUP",
+    "Legajo": "297201",
+    "Clave": "s6XnehXk"
+  },
+  {
+    "Nombre": "Juan",
+    "Apellido": "Barrios",
+    "DNI": "42876390",
+    "Correo": "juan@gmail.com",
+    "Telefono": "11789762",
+    "Direccion": "Calle 120",
+    "Carrera": "TUP",
+    "Legajo": "783062",
+    "Clave": "TZxaQpzV"
+  },
+  {
+    "Nombre": "Miriam",
+    "Apellido": "Gomez",
+    "DNI": "37098467",
+    "Correo": "miri@gmail.com",
+    "Telefono": "11789265",
+    "Direccion": "Calle 362",
+    "Carrera": "TUP",
+    "Legajo": "281351",
+    "Clave": "n1gyGllN"
+  },
+  {
+    "Nombre": "Rodrigo",
+    "Apellido": "Vera",
+    "DNI": "42893872",
+    "Correo": "rodri@gmail.com",
+    "Telefono": "11678254",
+    "Direccion": "Calle 111",
+    "Carrera": "TUP",
+    "Legajo": "039411",
+    "Clave": "gu8BhmPA"
+  },
+  {
+    "Nombre": "Lorenzo",
+    "Apellido": "Vera",
+    "DNI": "2675292",
+    "Correo": "jkhw@gmail.com",
+    "Telefono": "11987282",
+    "Direccion": "calle 8376",
+    "Carrera": "TUP",
+    "Legajo": "476397",
+    "Clave": "DSMu6X47"
+  },
+  {
+    "Nombre": "adolfoowjk",
+    "Apellido": "gutierre",
+    "DNI": "02497823847238",
+    "Correo": "xcjkdbob@GMAIL.COM",
+    "Telefono": "8463871246938714698137",
+    "Direccion": "0eruif",
+    "Carrera": "p",
+    "Legajo": "688023",
+    "Clave": "NY1epsKW"
+  }
+]

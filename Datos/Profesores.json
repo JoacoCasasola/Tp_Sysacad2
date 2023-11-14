@@ -1,0 +1,57 @@
+[
+  {
+    "Nombre": "Mariano",
+    "Apellido": "Ruiz",
+    "DNI": "34265987",
+    "Correo": "mar@gmail.com",
+    "Telefono": "11765298",
+    "Direccion": "Calle 254",
+    "ID": "387746",
+    "Clave": "uZSUzQpW",
+    "Nivel": "Titular"
+  },
+  {
+    "Nombre": "Marta",
+    "Apellido": "Ramirez",
+    "DNI": "29763567",
+    "Correo": "marta@gmail.com",
+    "Telefono": "11876209",
+    "Direccion": "calle 1028",
+    "ID": "942217",
+    "Clave": "5DqniWjH",
+    "Nivel": "Titular"
+  },
+  {
+    "Nombre": "Mauro",
+    "Apellido": "Silva",
+    "DNI": "37987562",
+    "Correo": "mau@gmail.com",
+    "Telefono": "11876265",
+    "Direccion": "Calle 6729",
+    "ID": "798612",
+    "Clave": "W41Llnc3",
+    "Nivel": "Ayudante"
+  },
+  {
+    "Nombre": "Lilia",
+    "Apellido": "Alvarez",
+    "DNI": "36278098",
+    "Correo": "lili@gmail.com",
+    "Telefono": "11872653",
+    "Direccion": "Calle 2018",
+    "ID": "518805",
+    "Clave": "ImZ3dIxr",
+    "Nivel": "Jefe de catedra"
+  },
+  {
+    "Nombre": "Fausto",
+    "Apellido": "Justo",
+    "DNI": "33872907",
+    "Correo": "fausto@gmail.com",
+    "Telefono": "11987367",
+    "Direccion": "Calle 403",
+    "ID": "400999",
+    "Clave": "yaf688sn",
+    "Nivel": "Ayudante"
+  }
+]

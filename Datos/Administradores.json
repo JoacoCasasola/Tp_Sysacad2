@@ -1,0 +1,68 @@
+[
+  {
+    "Nombre": "Martin",
+    "Apellido": "Alvarez",
+    "DNI": "12345678",
+    "Correo": "martin@gmail.com",
+    "Telefono": "11890256",
+    "Direccion": "calle 4876",
+    "ID": "12",
+    "Clave": "12",
+    "Nivel": "Basico"
+  },
+  {
+    "Nombre": "Laura",
+    "Apellido": "Rodriguez",
+    "DNI": "87654321",
+    "Correo": "lau@gmail.com",
+    "Telefono": "11782567",
+    "Direccion": "calle 456",
+    "ID": "123456",
+    "Clave": "1234567",
+    "Nivel": "Basico"
+  },
+  {
+    "Nombre": "Joaquin",
+    "Apellido": "Casasola",
+    "DNI": "45302811",
+    "Correo": "joa@gmail.com",
+    "Telefono": "11678345",
+    "Direccion": "calle 467",
+    "ID": "1",
+    "Clave": "1",
+    "Nivel": "Intermedio"
+  },
+  {
+    "Nombre": "Abril",
+    "Apellido": "Ruiz",
+    "DNI": "41234678",
+    "Correo": "abri@gmail.com",
+    "Telefono": "11789709",
+    "Direccion": "calle 302",
+    "ID": "907249",
+    "Clave": "8dSmA409",
+    "Nivel": "Avanzado"
+  },
+  {
+    "Nombre": "Romina",
+    "Apellido": "Alvarez",
+    "DNI": "32674309",
+    "Correo": "romi@gmail.com",
+    "Telefono": "11782978",
+    "Direccion": "Calle 110",
+    "ID": "389696",
+    "Clave": "s24M8R0H",
+    "Nivel": "Intermedio"
+  },
+  {
+    "Nombre": "Raul",
+    "Apellido": "Martinez",
+    "DNI": "29365487",
+    "Correo": "raul@gmail.com",
+    "Telefono": "11678209",
+    "Direccion": "Calle 102",
+    "ID": "082215",
+    "Clave": "fZqshFST",
+    "Nivel": "Basico"
+  }
+]
