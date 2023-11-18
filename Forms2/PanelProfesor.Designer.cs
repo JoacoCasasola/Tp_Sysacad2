@@ -198,6 +198,7 @@
             this.panelHijo.Controls.Add(this.label1);
             this.panelHijo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelHijo.Location = new System.Drawing.Point(200, 0);
+            this.panelHijo.MinimumSize = new System.Drawing.Size(484, 411);
             this.panelHijo.Name = "panelHijo";
             this.panelHijo.Size = new System.Drawing.Size(484, 411);
             this.panelHijo.TabIndex = 1;
@@ -242,6 +243,7 @@
             this.ClientSize = new System.Drawing.Size(684, 411);
             this.Controls.Add(this.panelHijo);
             this.Controls.Add(this.panel1);
+            this.MinimumSize = new System.Drawing.Size(700, 450);
             this.Name = "PanelProfesor";
             this.Text = "PanelAlumno";
             this.panel1.ResumeLayout(false);

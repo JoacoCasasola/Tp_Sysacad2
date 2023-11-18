@@ -60,6 +60,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CargarNotaExamen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CargarNotaExamen.Designer.cs">
+      <DependentUpon>CargarNotaExamen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CargarNotaTClase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CargarNotaTClase.Designer.cs">
+      <DependentUpon>CargarNotaTClase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CargarNotaTp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CargarNotaTp.Designer.cs">
+      <DependentUpon>CargarNotaTp.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConsultaDeHorarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +224,15 @@
     <Compile Include="ReporteAlumnosCurso.Designer.cs">
       <DependentUpon>ReporteAlumnosCurso.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CargarNotaExamen.resx">
+      <DependentUpon>CargarNotaExamen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CargarNotaTClase.resx">
+      <DependentUpon>CargarNotaTClase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CargarNotaTp.resx">
+      <DependentUpon>CargarNotaTp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultaDeHorarios.resx">
       <DependentUpon>ConsultaDeHorarios.cs</DependentUpon>
     </EmbeddedResource>
