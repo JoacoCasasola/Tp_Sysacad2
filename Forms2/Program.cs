@@ -17,7 +17,7 @@ namespace Forms2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginAlumno());
+            Application.Run(new PanelAdmin());
         }
     }
 }

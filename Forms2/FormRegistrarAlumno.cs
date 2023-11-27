@@ -69,6 +69,7 @@ namespace Forms2
                 _clave = generar.GenerarClave();
 
                 Archivar();
+                DB.LimpiarTablaSql("Alumnos");
                 DB.GuardarJsonAlumnosSql();
                 Close();
             }

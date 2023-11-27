@@ -169,38 +169,6 @@ namespace Forms2
             }
         }
 
-        private string ObtenerDatoAlumno(string dato, string idAlumno)
-        {
-            string texto = "";
-
-            try
-            {
-                string json = File.ReadAllText("C:\\Users\\Admin\\source\\repos\\libreriaClases\\Datos\\Alumnos.json");
-
-                JArray jsonArray = JArray.Parse(json);
-
-                JObject persona = jsonArray.Children<JObject>()
-                    .FirstOrDefault(p => p.Value<string>("Legajo") == idAlumno);
-
-                if (persona != null)
-                {
-                    string valor = persona.Value<string>(dato);
-
-                    if (!string.IsNullOrEmpty(valor))
-                    {
-                        texto = valor;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error al leer o buscar en el archivo JSON: " + ex.Message);
-            }
-
-            return texto;
-        }
-
-
         public string GetNombreAdmin(string id, string pathJson)
         {
             string nombre = "";

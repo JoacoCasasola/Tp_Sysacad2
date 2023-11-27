@@ -117,6 +117,7 @@ namespace Forms2
 
         private void btnReporte5_Click(object sender, EventArgs e)
         {
+            AbrirFormHijo(new ReporteListaEspera());
             OcultarSubMenu();
         }
 

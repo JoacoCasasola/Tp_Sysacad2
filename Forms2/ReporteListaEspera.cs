@@ -1,5 +1,6 @@
-﻿using libreriaClases;
-using Newtonsoft.Json.Linq;
+﻿using iTextSharp.text.pdf;
+using iTextSharp.text;
+using iTextSharp.tool.xml;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,16 +11,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
-using iTextSharp.tool.xml;
-using libreriaForms;
+using Newtonsoft.Json.Linq;
 
 namespace Forms2
 {
-    public partial class ReporteAlumnosCurso : Form
+    public partial class ReporteListaEspera : Form
     {
-        public ReporteAlumnosCurso()
+        public ReporteListaEspera()
         {
             InitializeComponent();
             btnGenerarPdf.Visible = false;
@@ -33,42 +31,18 @@ namespace Forms2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            bool CursoEncontrado = Validadores.VerificarUnicidad("Nombre", "C:\\Users\\Admin\\source\\repos\\libreriaClases\\Datos\\Cursos.json", textBox2.Text);
+            btnGenerarPdf.Visible = true;
+            dataGridView1.Visible = true;
+            panel1.Visible = false;
+            label1.Visible = false;
+            textBox1.Visible = false;
+            button1.Visible = false;
 
-            bool idEncontrado = Validadores.VerificarUnicidad("ID", "C:\\Users\\Admin\\source\\repos\\libreriaClases\\Datos\\Administradores.json", textBox1.Text);
-
-            if (idEncontrado)
-            {
-                if (CursoEncontrado)
-                {
-                    btnGenerarPdf.Visible = true;
-                    dataGridView1.Visible = true;
-                    panel1.Visible = false;
-                    label1.Visible = false;
-                    label2.Visible = false;
-                    textBox1.Visible = false;
-                    textBox2.Visible = false;
-                    button1.Visible = false;
-
-                    
-
-                    MostrarEnTabla(textBox2.Text);
-                }
-                else
-                {
-                    MessageBox.Show("El Curso es incorrecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("El ID es incorrecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            
+            MostrarEnTabla();
         }
 
-        private void btnRegistrar_Click(object sender, EventArgs e)
+        private void btnGenerarPdf_Click(object sender, EventArgs e)
         {
-            
             SaveFileDialog guardarArchivo = new SaveFileDialog();
             guardarArchivo.FileName = DateTime.Now.ToString("ddMMyyyyHHmmss") + ".pdf";
 
@@ -76,7 +50,8 @@ namespace Forms2
             html = html.Replace("@Admin", GetNombreAdmin(textBox1.Text, "C:\\Users\\Admin\\source\\repos\\libreriaClases\\Datos\\Administradores.json"));
             html = html.Replace("@ID", textBox1.Text);
             html = html.Replace("@Fecha", DateTime.Now.ToString("dd/MM/yyyy"));
-            html = html.Replace("@Curso",textBox2.Text);
+            html = html.Replace("Curso:", "");
+            html = html.Replace("@Curso", "");
 
             string filas = string.Empty;
             int indice = 0;
@@ -85,7 +60,7 @@ namespace Forms2
                 indice++;
                 filas += "<tr>";
                 filas += "<td>" + indice.ToString() + "</td>";
-                filas += "<td>" + textBox2.Text + "</td>";
+                filas += "<td>" + row.Cells["Curso"].Value + "</td>";
                 filas += "<td>" + row.Cells["Nombre"].Value + "</td>";
                 filas += "<td>" + row.Cells["Apellido"].Value + "</td>";
                 filas += "<td>" + row.Cells["DNI"].Value + "</td>";
@@ -113,21 +88,19 @@ namespace Forms2
 
                     pdfDoc.Add(new Paragraph(""));
 
-                    using(StringReader stringReader = new StringReader(html))
+                    using (StringReader stringReader = new StringReader(html))
                     {
-                        XMLWorkerHelper.GetInstance().ParseXHtml(pdfWriter,pdfDoc,stringReader);
+                        XMLWorkerHelper.GetInstance().ParseXHtml(pdfWriter, pdfDoc, stringReader);
                     }
 
                     pdfDoc.Close();
 
                     stream.Close();
                 }
-
-                
             }
         }
 
-        private void MostrarEnTabla(string nombreCurso)
+        private void MostrarEnTabla()
         {
             try
             {
@@ -138,27 +111,36 @@ namespace Forms2
 
                     JArray jsonArray = JArray.Parse(jsonData);
 
-                    JObject curso = (JObject)jsonArray.FirstOrDefault(x => x["Nombre"].ToString() == nombreCurso);
+                    dataGridView1.Columns.Add("Curso", "Curso");
+                    dataGridView1.Columns.Add("Nombre", "Nombre");
+                    dataGridView1.Columns.Add("Apellido", "Apellido");
+                    dataGridView1.Columns.Add("DNI", "DNI");
+                    dataGridView1.Columns.Add("Legajo", "Legajo");
 
-                    if (curso != null)
+                    foreach (JObject curso in jsonArray)
                     {
-                        string idInscriptos = curso.Value<string>("ID Inscriptos");
-                        string[] inscriptos = idInscriptos.Split(',');
+                        string listaEspera = curso.Value<string>("Lista de espera");
 
-                        dataGridView1.Columns.Add("Nombre", "Nombre");
-                        dataGridView1.Columns.Add("Apellido", "Apellido");
-                        dataGridView1.Columns.Add("DNI", "DNI");
-                        dataGridView1.Columns.Add("Legajo", "Legajo");
-
-                        foreach (string idAlumno in inscriptos)
+                        if (!string.IsNullOrEmpty(listaEspera))
                         {
-                            dataGridView1.Rows.Add(
-                                ObtenerDatoAlumno("Nombre", idAlumno),
-                                ObtenerDatoAlumno("Apellido", idAlumno),
-                                ObtenerDatoAlumno("DNI", idAlumno),
-                                ObtenerDatoAlumno("Legajo", idAlumno)
+                            string[] enListaEspera = listaEspera.Split(',');
+
+                            foreach (string idAlumno in enListaEspera)
+                            {
+                                dataGridView1.Rows.Add(
+                                    curso.Value<string>("Nombre"),
+                                    ObtenerDatoAlumno("Nombre", idAlumno),
+                                    ObtenerDatoAlumno("Apellido", idAlumno),
+                                    ObtenerDatoAlumno("DNI", idAlumno),
+                                    ObtenerDatoAlumno("Legajo", idAlumno)
                                 );
+                            }
                         }
+                    }
+
+                    if (dataGridView1.Rows.Count == 0)
+                    {
+                        MessageBox.Show("No hay alumnos en lista de espera en ningún curso.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else
@@ -171,7 +153,6 @@ namespace Forms2
                 MessageBox.Show("Error al cargar los datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
         private string ObtenerDatoAlumno(string dato, string idAlumno)
         {
@@ -230,5 +211,6 @@ namespace Forms2
             }
             return nombre;
         }
+
     }
 }

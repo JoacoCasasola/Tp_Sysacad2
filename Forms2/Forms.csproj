@@ -230,6 +230,12 @@
     <Compile Include="ReporteAlumnosCurso.Designer.cs">
       <DependentUpon>ReporteAlumnosCurso.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReporteListaEspera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteListaEspera.Designer.cs">
+      <DependentUpon>ReporteListaEspera.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CargarNotaExamen.resx">
       <DependentUpon>CargarNotaExamen.cs</DependentUpon>
     </EmbeddedResource>
@@ -323,6 +329,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteAlumnosCurso.resx">
       <DependentUpon>ReporteAlumnosCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteListaEspera.resx">
+      <DependentUpon>ReporteListaEspera.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
