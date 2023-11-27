@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,6 +20,8 @@ namespace libreriaForms
     {
         public string id {  get; set; }
         public string clave {  get; set; }
+
+        PanelCarga panelCarga;
 
         public LoginAdmin()
         {
@@ -41,7 +44,7 @@ namespace libreriaForms
         }
 
 
-        private void button2_Click(object sender, EventArgs e)
+        private async void button2_Click(object sender, EventArgs e)
         {
             if (textBox1.Text == "" || textBox2.Text == "")
             {
@@ -52,9 +55,11 @@ namespace libreriaForms
                 if (ValidarIdAdmin() && ValidarClaveAdmin())
                 {
                     Hide();
-                    MessageBox.Show($"{GetNombreAdmin(textBox1.Text, "C:\\Users\\Admin\\source\\repos\\libreriaClases\\Datos\\Administradores.json")}, bienvenido/a al panel de administracion!", "SysAcad", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    PanelAdmin panelAdmin = new PanelAdmin();
-                    panelAdmin.Show();
+                    Task tarea = new Task(Espera);
+                    tarea.Start();
+                    await Task.Delay(2000);
+                    Cerrar();
+                    MostrarPanelAdmin();
                 }
                 else
                 {
@@ -64,6 +69,32 @@ namespace libreriaForms
                 }
             }
             
+        }
+
+        public void Espera()
+        {
+            MostrarPanelEspera();
+        }
+
+        public void MostrarPanelAdmin()
+        {
+            MessageBox.Show($"{GetNombreAdmin(textBox1.Text, "C:\\Users\\Admin\\source\\repos\\libreriaClases\\Datos\\Administradores.json")}, bienvenido/a al panel de administracion!", "SysAcad", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            PanelAdmin panelAdmin = new PanelAdmin();
+            panelAdmin.Show();
+        }
+
+        public void MostrarPanelEspera()
+        {
+            panelCarga = new PanelCarga();
+            panelCarga.ShowDialog();
+        }
+
+        public void Cerrar()
+        {
+            if (panelCarga != null)
+            {
+                panelCarga.Close();
+            }
         }
 
         public bool ValidarIdAdmin()

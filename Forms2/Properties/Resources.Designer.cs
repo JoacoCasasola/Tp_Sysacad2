@@ -63,6 +63,16 @@ namespace Forms2.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap loading_14 {
+            get {
+                object obj = ResourceManager.GetObject("loading-14", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_UTN_1 {
             get {
                 object obj = ResourceManager.GetObject("logo-UTN-1", resourceCulture);
@@ -101,11 +111,12 @@ namespace Forms2.Properties {
         ///            }
         ///    &lt;/style&gt;
         ///&lt;/head&gt;
+        ///
         ///&lt;body&gt;
         ///    &lt;table style=&quot;width:100%&quot;&gt;
         ///
         ///        &lt;tr&gt;
-        ///            &lt;td style=&quot;width: 20%&quot;&gt;&lt;/t [resto de la cadena truncado]&quot;;.
+        ///            &lt;td style=&quot;width: 20%&quot;&gt;&lt; [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string plantilla {
             get {

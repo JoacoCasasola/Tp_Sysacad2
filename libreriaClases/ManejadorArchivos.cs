@@ -13,6 +13,8 @@ namespace libreriaClases
 {
     public class ManejadorArchivos
     {
+        public delegate void GuardarListaDiccionariosDelegado(List<Dictionary<string, string>> listaDiccionarios, string nombreArchivo, string rutaArchivo);
+
         public static void GuardarListaDiccionariosJSON(List<Dictionary<string, string>> listaDiccionarios, string nombreArchivo, string rutaArchivo)
         {
             try

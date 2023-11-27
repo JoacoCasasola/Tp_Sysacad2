@@ -17,6 +17,7 @@ namespace Forms2
     public partial class RegistraNotas : Form
     {
         List<string> alumnosSeleccionados = new List<string>();
+
         public RegistraNotas()
         {
             InitializeComponent();
@@ -166,7 +167,6 @@ namespace Forms2
 
             if (seleccionadosCount > 1)
             {
-                MessageBox.Show("Solo se puede seleccionar un alumno", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 alumnosSeleccionados.Clear();
                 return; 
             }
@@ -223,6 +223,20 @@ namespace Forms2
             label1.Visible = false;
 
             MostrarEnTabla(textBox1.Text, dataGridViewTclase);
+
+            GuardarSeleccionados(dataGridViewTclase);
+
+            if (alumnosSeleccionados.Count == 1)
+            {
+                string legajoAlumno = alumnosSeleccionados[0];
+                CargarNotaTClase cargarNotaTClase = new CargarNotaTClase();
+                cargarNotaTClase.legajoalumno = legajoAlumno;
+                cargarNotaTClase.nombreCurso = textBox1.Text;
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un solo alumno para cargar la nota.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnTps_Click(object sender, EventArgs e)
@@ -242,20 +256,41 @@ namespace Forms2
             if (dataGridViewTp.Visible)
             {
                 GuardarSeleccionados(dataGridViewTp);
-                CargarNotaTp cargarNotaTp = new CargarNotaTp();
-                cargarNotaTp.ShowDialog();
+                if (alumnosSeleccionados.Count == 1)
+                {
+                    CargarNotaTp cargarNotaTp = new CargarNotaTp();
+                    cargarNotaTp.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un solo alumno para cargar la nota.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            if (dataGridViewExam.Visible)
+            else if (dataGridViewExam.Visible)
             {
                 GuardarSeleccionados(dataGridViewExam);
-                CargarNotaExamen cargarNotaExamen = new CargarNotaExamen();
-                cargarNotaExamen.ShowDialog();
+                if (alumnosSeleccionados.Count == 1)
+                {
+                    CargarNotaExamen cargarNotaExamen = new CargarNotaExamen();
+                    cargarNotaExamen.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un solo alumno para cargar la nota.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            if (dataGridViewTclase.Visible)
+            else if (dataGridViewTclase.Visible)
             {
                 GuardarSeleccionados(dataGridViewTclase);
-                CargarNotaTClase cargarNotaTClase = new CargarNotaTClase();
-                cargarNotaTClase.ShowDialog();
+                if (alumnosSeleccionados.Count == 1)
+                {
+                    CargarNotaTClase cargarNotaTClase = new CargarNotaTClase();
+                    cargarNotaTClase.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un solo alumno para cargar la nota.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

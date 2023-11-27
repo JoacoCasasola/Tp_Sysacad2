@@ -14,6 +14,16 @@ namespace libreriaClases
 {
     public class Validadores
     {
+        public delegate bool ValidarDelegado(string input);
+
+        public delegate void UnicidadVerificadaEventHandler(string mensaje);
+        public static event UnicidadVerificadaEventHandler UnicidadVerificada;
+
+        protected static void OnUnicidadVerificada(string mensaje)
+        {
+            UnicidadVerificada.Invoke(mensaje);
+        }
+
         public static bool VerificarUnicidad(string key, string jsonFilePath, string claveBuscada)
         {
             bool verifica = false;
@@ -31,6 +41,7 @@ namespace libreriaClases
                         if (value == claveBuscada)
                         {
                             verifica = true;
+                            OnUnicidadVerificada($"El valor '{claveBuscada}' es único para la clave '{key}'.");
                             break;
                         }
                     }
@@ -42,7 +53,6 @@ namespace libreriaClases
             }
             return verifica;
         }
-
 
 
         public static bool VerificaSoloNumero(string input)
@@ -74,6 +84,7 @@ namespace libreriaClases
             string patron = @"^[A-Za-zÁáÉéÍíÓóÚúÑñ]+ [0-9]{2}:[0-9]{2} [-aA] [0-9]{2}:[0-9]{2}$";
             return Regex.IsMatch(diaHorario, patron);
         }
+
 
 
         public string GenerarID(int longitud)

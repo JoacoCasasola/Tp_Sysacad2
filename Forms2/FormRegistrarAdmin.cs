@@ -66,7 +66,9 @@ namespace Forms2
 
         private void Archivar()
         {
-            ManejadorArchivos.GuardarListaDiccionariosJSON(CrearListDicts(),"Administradores", "C:\\Users\\Admin\\source\\repos\\libreriaClases\\Datos\\");
+            //DELEGADO
+            ManejadorArchivos.GuardarListaDiccionariosDelegado guardarLista = ManejadorArchivos.GuardarListaDiccionariosJSON;
+            guardarLista(CrearListDicts(),"Administradores", "C:\\Users\\Admin\\source\\repos\\libreriaClases\\Datos\\");
             MessageBox.Show($"Datos cargados, Ahora {_nombre} es administrador\n           ID: {_idAdmin} - Clave: {_clave}", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
@@ -115,11 +117,15 @@ namespace Forms2
                     valido = false;
                     mensajeError += "- Su DNI no es valido (se encontro usuario con el mismo)\n";
                 }
-                if (!Validadores.VerificarCorreoElectronico(textBox4.Text))
+
+                //DELEGADO
+                Validadores.ValidarDelegado validar = Validadores.VerificarCorreoElectronico;
+                if (!validar(textBox4.Text))
                 {
                     valido = false;
                     mensajeError += "- Su correo es incorrecto\n";
                 }
+
                 if(Validadores.VerificarUnicidad("Correo", "C:\\Users\\Admin\\source\\repos\\libreriaClases\\Datos\\Administradores.json", textBox4.Text))
                 {
                     valido = false;

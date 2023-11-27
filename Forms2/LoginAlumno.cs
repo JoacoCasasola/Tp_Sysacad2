@@ -19,6 +19,7 @@ namespace libreriaForms
         public string legajo { get; set; }
         public string clave { get; set; }
 
+        PanelCarga panelCarga;
         public LoginAlumno()
         {
             InitializeComponent();
@@ -38,7 +39,7 @@ namespace libreriaForms
             registrarAlumno.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private async void button2_Click(object sender, EventArgs e)
         {
             if (textBox1.Text == "" || textBox2.Text == "")
             {
@@ -49,9 +50,12 @@ namespace libreriaForms
                 if (ValidarUsuario("Legajo", textBox1.Text) && ValidarUsuario("Clave", textBox2.Text))
                 {
                     Hide();
-                    MessageBox.Show($"{GetNombreAdmin(textBox1.Text, "C:\\Users\\Admin\\source\\repos\\libreriaClases\\Datos\\Alumnos.json")}, bienvenido/a al panel de alumno!", "SysAcad", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    PanelAlumno panelAlumno = new PanelAlumno();
-                    panelAlumno.Show();
+                    Task tarea = new Task(Espera);
+                    tarea.Start();
+                    await Task.Delay(2000);
+                    Cerrar();
+                    MostrarPanelAlumno();
+                   
                 }
                 else
                 {
@@ -59,6 +63,31 @@ namespace libreriaForms
                     textBox1.Clear();
                     textBox2.Clear();
                 }
+            }
+        }
+        public void Espera()
+        {
+            MostrarPanelEspera();
+        }
+
+        public void MostrarPanelAlumno()
+        {
+            MessageBox.Show($"{GetNombreAlumno(textBox1.Text, "C:\\Users\\Admin\\source\\repos\\libreriaClases\\Datos\\Alumnos.json")}, bienvenido/a al panel de alumno!", "SysAcad", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            PanelAlumno panelAlumno = new PanelAlumno();
+            panelAlumno.Show();
+        }
+
+        public void MostrarPanelEspera()
+        {
+            panelCarga = new PanelCarga();
+            panelCarga.ShowDialog();
+        }
+
+        public void Cerrar()
+        {
+            if (panelCarga != null)
+            {
+                panelCarga.Close();
             }
         }
 
@@ -70,7 +99,7 @@ namespace libreriaForms
             return claveExiste;
         }
 
-        private string GetNombreAdmin(string legajo, string pathJson)
+        private string GetNombreAlumno(string legajo, string pathJson)
         {
             string nombre = "";
             try

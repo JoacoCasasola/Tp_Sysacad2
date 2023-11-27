@@ -43,8 +43,6 @@ namespace libreriaClases
 
 
 
-
-
         public static List<Dictionary<string, string>> AgregarAListaProfesores(string nombre, string apellido, string dni, string correo, string telefono, string direccion, string idProfesor, string nivel, string clave)
         {
             Dictionary<string, string> dictProfesor;
@@ -126,5 +124,53 @@ namespace libreriaClases
 
             return listaDictCurso;
         }
+
+
+
+
+
+        public static List<Dictionary<string, string>> AgregarListaNotasExamen(string examen, string nota)
+        {
+            Dictionary<string, string> dictNotas = new Dictionary<string, string>();
+            List<Dictionary<string, string>> listaDictNotas = new List<Dictionary<string, string>>();
+
+            dictNotas["Examen"] = examen;
+            dictNotas["Nota"] = nota;
+
+            listaDictNotas.Add(dictNotas);
+
+            return listaDictNotas;
+        }
+
+        public static List<Dictionary<string, string>> AgregarListaNotasTp(string tp, string nota)
+        {
+            Dictionary<string, string> dictNotas = new Dictionary<string, string>();
+            List<Dictionary<string, string>> listaDictNotas = new List<Dictionary<string, string>>();
+
+            dictNotas["TP"] = tp;
+            dictNotas["Nota"] = nota;
+
+            listaDictNotas.Add(dictNotas);
+
+            return listaDictNotas;
+        }
+
+        public static List<Dictionary<string, string>> AgregarListaNotasTclase(string curso , string legajo, string fechaClase, string nota)
+        {
+            Dictionary<string, string> dictNotas = new Dictionary<string, string>();
+            List<Dictionary<string, string>> listaDictNotas = new List<Dictionary<string, string>>();
+
+            dictNotas["Curso"] =  curso;
+            dictNotas["Legajo Alumno"] = legajo;
+            dictNotas["Fecha de clase"] = fechaClase;
+            dictNotas["Nota"] = nota;
+
+            listaDictNotas.Add(dictNotas);
+
+            return listaDictNotas;
+        }
     }
+
+
+        
 }

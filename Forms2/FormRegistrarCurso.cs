@@ -88,7 +88,9 @@ namespace Forms2
 
         private void Archivar()
         {
-            ManejadorArchivos.GuardarListaDiccionariosJSON(CrearListDicts(), "Cursos", "C:\\Users\\Admin\\source\\repos\\libreriaClases\\Datos\\");
+            //DELEGADO
+            ManejadorArchivos.GuardarListaDiccionariosDelegado guardarLista = ManejadorArchivos.GuardarListaDiccionariosJSON;
+            guardarLista(CrearListDicts(), "Cursos", "C:\\Users\\Admin\\source\\repos\\libreriaClases\\Datos\\");
             MessageBox.Show($"Nuevo curso '{_nombre}' agregado correctamente.", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Close();
         }
@@ -143,11 +145,15 @@ namespace Forms2
                 {
                     Console.WriteLine("La cadena no es un número entero válido.");
                 }
-                if (!Validadores.VerificarDiaHorario(textBox5.Text))
+
+                //DELEGADO
+                Validadores.ValidarDelegado validar = Validadores.VerificarDiaHorario;
+                if (!validar(textBox5.Text))
                 {
                     valido = false;
                     mensajeError += "- El horario debe tener esta estructura: 'Lunes 18:30 - 22:00'\n";
                 }
+
             }
             if (!valido)
             {

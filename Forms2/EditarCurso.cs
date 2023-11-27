@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static libreriaClases.Validadores;
 
 namespace Forms2
 {
@@ -22,6 +23,10 @@ namespace Forms2
         public EditarCurso()
         {
             InitializeComponent();
+
+            //EVENTO
+            Validadores.UnicidadVerificada += ManejarUnicidadVerificada;
+
             Visivilidad();
         }
 
@@ -41,13 +46,17 @@ namespace Forms2
             button3.Visible = infoVisible;
         }
 
-       
-        
+        private void ManejarUnicidadVerificada(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Unicidad Verificada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
 
         public void EncontrarCurso(string nombre)
         {
             if (Validadores.VerificarUnicidad("Nombre", jsonFilePath, nombre))
             {
+                ManejarUnicidadVerificada("Curso encontrado");
                 try
                 {
                     string json = File.ReadAllText(jsonFilePath);
@@ -126,11 +135,15 @@ namespace Forms2
                 {
                     Console.WriteLine("La cadena no es un número entero válido.");
                 }
-                if (!Validadores.VerificarDiaHorario(textBox6.Text))
+
+                //DELEGADO
+                Validadores.ValidarDelegado validar = Validadores.VerificarDiaHorario;
+                if (!validar(textBox6.Text))
                 {
                     valido = false;
                     mensajeError += "- El horario debe tener esta estructura: 'Lunes 18:30 - 22:00'\n"; ;
                 }
+
             }
             if (!valido)
             {
