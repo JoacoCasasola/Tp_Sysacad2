@@ -73,7 +73,7 @@ namespace libreriaForms
         public void MostrarPanelAlumno()
         {
             MessageBox.Show($"{GetNombreProfesor(textBox1.Text, "C:\\Users\\Admin\\source\\repos\\libreriaClases\\Datos\\Profesores.json")}, bienvenido/a al panel de Profesores!", "SysAcad", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            PanelAlumno panelAlumno = new PanelAlumno();
+            PanelProfesor panelAlumno = new PanelProfesor();
             panelAlumno.Show();
         }
 

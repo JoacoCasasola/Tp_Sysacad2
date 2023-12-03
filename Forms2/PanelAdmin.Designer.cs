@@ -30,6 +30,10 @@
         {
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnInfoUsuario = new System.Windows.Forms.Button();
+            this.panelListaEspera = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelDeReportes = new System.Windows.Forms.Panel();
             this.btnReporte5 = new System.Windows.Forms.Button();
             this.btnReporte4 = new System.Windows.Forms.Button();
@@ -51,6 +55,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
+            this.panelListaEspera.SuspendLayout();
             this.panelDeReportes.SuspendLayout();
             this.panelRegistro.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -63,6 +68,8 @@
             this.panelMenu.AutoScroll = true;
             this.panelMenu.BackColor = System.Drawing.Color.SteelBlue;
             this.panelMenu.Controls.Add(this.btnInfoUsuario);
+            this.panelMenu.Controls.Add(this.panelListaEspera);
+            this.panelMenu.Controls.Add(this.button1);
             this.panelMenu.Controls.Add(this.panelDeReportes);
             this.panelMenu.Controls.Add(this.btnReportes);
             this.panelMenu.Controls.Add(this.btnGestionCursos);
@@ -82,15 +89,75 @@
             this.btnInfoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInfoUsuario.Font = new System.Drawing.Font("Trebuchet MS", 9F);
             this.btnInfoUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnInfoUsuario.Location = new System.Drawing.Point(0, 605);
+            this.btnInfoUsuario.Location = new System.Drawing.Point(0, 719);
             this.btnInfoUsuario.Name = "btnInfoUsuario";
             this.btnInfoUsuario.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnInfoUsuario.Size = new System.Drawing.Size(183, 40);
-            this.btnInfoUsuario.TabIndex = 10;
+            this.btnInfoUsuario.TabIndex = 14;
             this.btnInfoUsuario.Text = "Cuenta";
             this.btnInfoUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInfoUsuario.UseVisualStyleBackColor = true;
-            this.btnInfoUsuario.Click += new System.EventHandler(this.btnInfoUsuario_Click);
+            this.btnInfoUsuario.Click += new System.EventHandler(this.btnInfoUsuario_Click_1);
+            // 
+            // panelListaEspera
+            // 
+            this.panelListaEspera.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panelListaEspera.Controls.Add(this.button3);
+            this.panelListaEspera.Controls.Add(this.button4);
+            this.panelListaEspera.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelListaEspera.Location = new System.Drawing.Point(0, 645);
+            this.panelListaEspera.Name = "panelListaEspera";
+            this.panelListaEspera.Size = new System.Drawing.Size(183, 74);
+            this.panelListaEspera.TabIndex = 13;
+            // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            this.button3.Location = new System.Drawing.Point(0, 35);
+            this.button3.Name = "button3";
+            this.button3.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.button3.Size = new System.Drawing.Size(183, 35);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "Agregar";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            this.button4.Location = new System.Drawing.Point(0, 0);
+            this.button4.Name = "button4";
+            this.button4.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.button4.Size = new System.Drawing.Size(183, 35);
+            this.button4.TabIndex = 0;
+            this.button4.Text = "Eliminar";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(0, 605);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(183, 40);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Administrar Lista Espera";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panelDeReportes
             // 
@@ -388,6 +455,7 @@
             this.Name = "PanelAdmin";
             this.Text = "PanelAdmin";
             this.panelMenu.ResumeLayout(false);
+            this.panelListaEspera.ResumeLayout(false);
             this.panelDeReportes.ResumeLayout(false);
             this.panelRegistro.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
@@ -416,12 +484,16 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnReportes;
-        private System.Windows.Forms.Button btnInfoUsuario;
         private System.Windows.Forms.Panel panelDeReportes;
         private System.Windows.Forms.Button btnReporte3;
         private System.Windows.Forms.Button btnReporte2;
         private System.Windows.Forms.Button btnReporte1;
         private System.Windows.Forms.Button btnReporte5;
         private System.Windows.Forms.Button btnReporte4;
+        private System.Windows.Forms.Button btnInfoUsuario;
+        private System.Windows.Forms.Panel panelListaEspera;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button1;
     }
 }

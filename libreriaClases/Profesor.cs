@@ -26,9 +26,9 @@ namespace libreriaClases
         [JsonProperty("ID")]
         public string _idProfesor { get; set; }
         public string _clave { get; set; }
-        public string _nivel { get; set; }
+        public NivelProfesor _nivel { get; set; }
 
-        public Profesor(string nombre, string apellido, string dni, string correo, string telefono, string direccion, string idProfesor, string nivel, string clave)
+        public Profesor(string nombre, string apellido, string dni, string correo, string telefono, string direccion, string idProfesor, NivelProfesor nivel, string clave)
         {
             _nombre = nombre;
             _apellido = apellido;

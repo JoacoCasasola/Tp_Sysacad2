@@ -65,6 +65,7 @@ namespace libreriaForms
 
         private void btnRegistrarPagos_Click(object sender, EventArgs e)
         {
+            AbrirFormHijo(new PagosAlumno());
             OcultarSubMenu();
         }
 

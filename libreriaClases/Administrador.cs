@@ -26,9 +26,9 @@ namespace libreriaClases
         [JsonProperty("ID")]
         public string _idAdmin { get; set; }
         public string _clave { get; set; }
-        public string _nivel { get; set; }
+        public NivelAdmin _nivel { get; set; }
 
-        public Administrador(string nombre, string apellido, string dni, string correo, string telefono, string direccion,string idAdmin, string nivel, string clave)
+        public Administrador(string nombre, string apellido, string dni, string correo, string telefono, string direccion,string idAdmin, NivelAdmin nivel, string clave)
         {
             _nombre = nombre;
             _apellido = apellido;

@@ -3,10 +3,10 @@
     "Nombre": "Curso1",
     "ID": "903467",
     "Cupo Max.": "35",
-    "Cupo Actual": "3",
+    "Cupo Actual": "4",
     "Descripcion": "SPD",
-    "ID Inscriptos": "2,11,783062",
-    "Lista de espera": "",
+    "ID Inscriptos": "2,11,783062,425914",
+    "Lista de espera": "2,11",
     "Horario": "Jueves 18:30 - 22:30"
   },
   {
@@ -23,9 +23,9 @@
     "Nombre": "Curso3",
     "ID": "175134",
     "Cupo Max.": "35",
-    "Cupo Actual": "3",
+    "Cupo Actual": "4",
     "Descripcion": "Estadistica",
-    "ID Inscriptos": "2,297201,783062",
+    "ID Inscriptos": "2,297201,783062,425914",
     "Lista de espera": "",
     "Horario": "Viernes 18:30 - 22:30"
   },
@@ -36,16 +36,16 @@
     "Cupo Actual": "2",
     "Descripcion": "Matematicas",
     "ID Inscriptos": "2,11",
-    "Lista de espera": "",
+    "Lista de espera": "11",
     "Horario": "Miercoles 18:30 - 22:30"
   },
   {
     "Nombre": "Curso5",
     "ID": "532394",
     "Cupo Max.": "30",
-    "Cupo Actual": "1",
+    "Cupo Actual": "2",
     "Descripcion": "Progra 2",
-    "ID Inscriptos": "11",
+    "ID Inscriptos": "11,425914",
     "Lista de espera": "",
     "Horario": "Lunes 18:30 - 22:30"
   },

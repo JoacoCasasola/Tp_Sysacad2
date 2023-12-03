@@ -86,5 +86,16 @@
     "Carrera": "TUP",
     "Legajo": "254670",
     "Clave": "oIzQWfcL"
+  },
+  {
+    "Nombre": "Martin",
+    "Apellido": "Casa",
+    "DNI": "1232321",
+    "Correo": "martin@gmail.com",
+    "Telefono": "11876265",
+    "Direccion": "Calle 12",
+    "Carrera": "TUP",
+    "Legajo": "425914",
+    "Clave": "DsF6mBnw"
   }
 ]

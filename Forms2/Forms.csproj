@@ -60,6 +60,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarAlumnoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarAlumnoLista.Designer.cs">
+      <DependentUpon>AgregarAlumnoLista.cs</DependentUpon>
+    </Compile>
     <Compile Include="CargarNotaExamen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,18 @@
     </Compile>
     <Compile Include="EditarCurso.Designer.cs">
       <DependentUpon>EditarCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EliminaAlumnoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EliminaAlumnoLista.Designer.cs">
+      <DependentUpon>EliminaAlumnoLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormasDePago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormasDePago.Designer.cs">
+      <DependentUpon>FormasDePago.cs</DependentUpon>
     </Compile>
     <Compile Include="FormEliminarCurso.cs">
       <SubType>Form</SubType>
@@ -186,6 +204,12 @@
     <Compile Include="NuevaClaveProfesor.Designer.cs">
       <DependentUpon>NuevaClaveProfesor.cs</DependentUpon>
     </Compile>
+    <Compile Include="PagosAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagosAlumno.Designer.cs">
+      <DependentUpon>PagosAlumno.cs</DependentUpon>
+    </Compile>
     <Compile Include="PanelAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,12 +254,21 @@
     <Compile Include="ReporteAlumnosCurso.Designer.cs">
       <DependentUpon>ReporteAlumnosCurso.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReporteConceptoPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteConceptoPago.Designer.cs">
+      <DependentUpon>ReporteConceptoPago.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReporteListaEspera.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReporteListaEspera.Designer.cs">
       <DependentUpon>ReporteListaEspera.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AgregarAlumnoLista.resx">
+      <DependentUpon>AgregarAlumnoLista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CargarNotaExamen.resx">
       <DependentUpon>CargarNotaExamen.cs</DependentUpon>
     </EmbeddedResource>
@@ -250,6 +283,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditarCurso.resx">
       <DependentUpon>EditarCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminaAlumnoLista.resx">
+      <DependentUpon>EliminaAlumnoLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormasDePago.resx">
+      <DependentUpon>FormasDePago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEliminarCurso.resx">
       <DependentUpon>FormEliminarCurso.cs</DependentUpon>
@@ -299,6 +338,9 @@
     <EmbeddedResource Include="NuevaClaveProfesor.resx">
       <DependentUpon>NuevaClaveProfesor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PagosAlumno.resx">
+      <DependentUpon>PagosAlumno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PanelAdmin.resx">
       <DependentUpon>PanelAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -329,6 +371,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteAlumnosCurso.resx">
       <DependentUpon>ReporteAlumnosCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteConceptoPago.resx">
+      <DependentUpon>ReporteConceptoPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteListaEspera.resx">
       <DependentUpon>ReporteListaEspera.cs</DependentUpon>

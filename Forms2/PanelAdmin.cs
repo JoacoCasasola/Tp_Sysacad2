@@ -22,6 +22,7 @@ namespace Forms2
         {
             panelRegistro.Visible = false;
             panelDeReportes.Visible = false;
+            panelListaEspera.Visible = false;
         }
 
         public void OcultarSubMenu()
@@ -33,6 +34,10 @@ namespace Forms2
             if(panelDeReportes.Visible)
             {
                 panelDeReportes.Visible = false;
+            }
+            if (panelListaEspera.Visible)
+            {
+                panelListaEspera.Visible = false;
             }
         }
 
@@ -106,6 +111,7 @@ namespace Forms2
 
         private void btnReporte3_Click(object sender, EventArgs e)
         {
+            AbrirFormHijo(new ReporteConceptoPago());
             OcultarSubMenu();
         }
 
@@ -125,7 +131,26 @@ namespace Forms2
 
 
 
-        private void btnInfoUsuario_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MostrarSubMenu(panelListaEspera);
+        }
+
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            AbrirFormHijo(new EliminaAlumnoLista());
+            OcultarSubMenu();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AbrirFormHijo(new AgregarAlumnoLista());
+            OcultarSubMenu();
+        }
+
+
+        private void btnInfoUsuario_Click_1(object sender, EventArgs e)
         {
             AbrirFormHijo(new InfoAdmin());
             OcultarSubMenu();

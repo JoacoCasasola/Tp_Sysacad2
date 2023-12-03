@@ -78,7 +78,6 @@ namespace Forms2
             {
                 VerificarCupo(nombreCurso);
             }
-            
         }
 
         private void GuardarSeleccionados()

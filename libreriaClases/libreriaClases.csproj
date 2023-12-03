@@ -212,8 +212,10 @@
     <Compile Include="Administrador.cs" />
     <Compile Include="Alumno.cs" />
     <Compile Include="Curso.cs" />
+    <Compile Include="EnvioEmail.cs" />
     <Compile Include="Hash.cs" />
     <Compile Include="ManejadorArchivos.cs" />
+    <Compile Include="Pago.cs" />
     <Compile Include="Profesor.cs" />
     <Compile Include="UsuarioAdmin.cs" />
     <Compile Include="UsuarioAlumno.cs" />
