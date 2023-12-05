@@ -36,24 +36,25 @@ namespace Forms2
 
         private void button2_Click(object sender, EventArgs e)
         {
-        
-            Validadores generar = new Validadores();
-            _idProfesor = generar.GenerarID(6);
-            _clave = generar.GenerarClave();
+            if (Validar())
+            {
+                Validadores generar = new Validadores();
+                _idProfesor = generar.GenerarID(6);
+                _clave = generar.GenerarClave();
 
-            _nombre = textBox1.Text;
-            _apellido = textBox2.Text;
-            _dni = textBox3.Text;
-            _correo = textBox4.Text;
-            _telefono = textBox5.Text;
-            _direccion = textBox6.Text;
-            _nivel = comboBox1.Text;
+                _nombre = textBox1.Text;
+                _apellido = textBox2.Text;
+                _dni = textBox3.Text;
+                _correo = textBox4.Text;
+                _telefono = textBox5.Text;
+                _direccion = textBox6.Text;
+                _nivel = comboBox1.Text;
 
-            Archivar();
-            DB.LimpiarTablaSql("Profesores");
-            DB.GuardarJsonProfesoresSql();
-            Close();
-            
+                Archivar();
+                DB.LimpiarTablaSql("Profesores");
+                DB.GuardarJsonProfesoresSql();
+                Close();
+            }
         }
 
         public List<Dictionary<string, string>> CrearListDicts()
@@ -69,6 +70,11 @@ namespace Forms2
             guardarLista(CrearListDicts(), "Profesores", "C:\\Users\\Admin\\source\\repos\\libreriaClases\\Datos\\");
             MessageBox.Show($"Datos cargados, Ahora {_nombre} es profesor\n           ID: {_idProfesor} - Clave: {_clave}", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
+
+            EnvioEmail envioEmail = new EnvioEmail();
+            envioEmail.EnviarCorreo(_correo, "Prueba envio de email", $"Hola {_nombre}!\n Bienvenido a UTN Avellaneda, ahora eres profesor!");
+            MessageBox.Show("Email de confirmacion enviado.", "Email", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -118,6 +124,7 @@ namespace Forms2
 
                 //DELEGADO
                 Validadores.ValidarDelegado validar = Validadores.VerificarCorreoElectronico;
+
                 if (!validar(textBox4.Text))
                 {
                     valido = false;
@@ -139,7 +146,7 @@ namespace Forms2
                     valido = false;
                     mensajeError += "- Su direccion es incorrecta\n";
                 }
-                if (comboBox1.Text != "Titular" && comboBox1.Text != "Ayudante" && comboBox1.Text != "Jefe de catedra")
+                if (comboBox1.Text != "Titular" && comboBox1.Text != "Ayudante" && comboBox1.Text != "JefeDeCatedra")
                 {
                     valido = false;
                     mensajeError += "- Su nivel es incorrecto\n";

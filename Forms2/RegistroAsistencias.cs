@@ -1,5 +1,4 @@
 ﻿using libreriaClases;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -14,26 +13,25 @@ using System.Windows.Forms;
 
 namespace Forms2
 {
-    public partial class RegistraNotas : Form
+    public partial class RegistroAsistencias : Form
     {
         List<string> alumnosSeleccionados = new List<string>();
 
-        public RegistraNotas()
+        public enum EstadoAlumno
+        {
+            Presente,
+            Ausente
+        }
+
+        public RegistroAsistencias()
         {
             InitializeComponent();
-            btnExamenes.Visible = false;
-            btnTps.Visible = false;
-            btnTClase.Visible = false;
-            btnSeleccionar.Visible = false;
-            label1.Visible = false;
-            dataGridViewExam.Visible = false;
-            dataGridViewTp.Visible = false;
-            dataGridViewTclase.Visible = false;
-            textBox2.Visible = false;
+            dataGridViewAlumnos.Visible = false;
+            button1.Visible = false;    
             dateTimePicker1.Visible = false;
-            numericUpDown1.Visible = false;
+            comboBox1.Visible = false;
+            label2.Visible = false;
             label3.Visible = false;
-            label5.Visible = false;
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -172,133 +170,45 @@ namespace Forms2
                     }
                 }
             }
-        }
 
-
-        private void btnRegistrar_Click(object sender, EventArgs e)
-        {
-            if (VerificarCurso(textBox1.Text))
-            {
-                btnRegistrar.Visible = false;
-                panel1.Visible = false;
-                label2.Visible = false;
-                textBox1.Visible = false;
-                btnExamenes.Visible = true;
-                btnTps.Visible = true;
-                btnTClase.Visible = true;
-                label1.Text = $"Elija tipo de trabajo del curso '{textBox1.Text}'";
-                label1.Visible = true;
-            }
-        }
-
-        private void btnExamenes_Click(object sender, EventArgs e)
-        {
-            dataGridViewExam.Visible = true;
-            btnSeleccionar.Visible = true;
-            btnExamenes.Visible = false;
-            btnTps.Visible = false;
-            btnTClase.Visible = false;
-            label1.Visible = false;
-            label3.Visible = true;
-            label5.Visible = true;
-            textBox2.Visible = true;
-            numericUpDown1.Visible = true;
-
-            label5.Text = "Examen";
-            
-            MostrarEnTabla(textBox1.Text, dataGridViewExam);
-        }
-
-        private void btnTClase_Click(object sender, EventArgs e)
-        {
-            dataGridViewTclase.Visible = true;
-            btnSeleccionar.Visible = true;
-            btnExamenes.Visible = false;
-            btnTps.Visible = false;
-            btnTClase.Visible = false;
-            label1.Visible = false;
-            label3.Visible = true;
-            label5.Visible = true;
-            dateTimePicker1.Visible = true;
-            numericUpDown1.Visible = true;
-
-            label5.Text = "Clase";
-
-            MostrarEnTabla(textBox1.Text, dataGridViewTclase);
-
-        }
-
-        private void btnTps_Click(object sender, EventArgs e)
-        {
-            dataGridViewTp.Visible = true;
-            btnSeleccionar.Visible = true;
-            btnExamenes.Visible = false;
-            btnTps.Visible = false;
-            btnTClase.Visible = false;
-            label1.Visible = false;
-            label3.Visible = true;
-            label5.Visible = true;
-            textBox2.Visible = true;
-            numericUpDown1.Visible = true;
-
-            label5.Text = "Trabajo practico";
-
-            MostrarEnTabla(textBox1.Text, dataGridViewTp);
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            if (dataGridViewTp.Visible)
+            if (VerificarCurso(textBox1.Text))
             {
-                GuardarSeleccionados(dataGridViewTp);
-                if (alumnosSeleccionados.Count == 1)
-                {
-                    if (ValidarNota())
-                    {
-                        List<Dictionary<string, string>> ListDictTp = Administrador.AgregarListaNotasTp(textBox1.Text, alumnosSeleccionados[0], textBox2.Text, numericUpDown1.Value.ToString(), false);
-                        Archivar("NotasTps", ListDictTp);
-                        MessageBox.Show("Nota cargada con exito.", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Close();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Seleccione un solo alumno para cargar la nota.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                dataGridViewAlumnos.Visible = true;
+                panel1.Visible = false;
+                textBox1.Visible = false;
+                label1.Visible = false;
+                btnSeleccionar.Visible = false;
+                button1.Visible = true;
+                dateTimePicker1.Visible = true;
+                comboBox1.Visible = true;
+                label2.Visible = true;
+                label3.Visible = true;
+
+                MostrarEnTabla(textBox1.Text, dataGridViewAlumnos);
             }
-            else if (dataGridViewExam.Visible)
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            GuardarSeleccionados(dataGridViewAlumnos);
+
+            if (alumnosSeleccionados.Count == 1)
             {
-                GuardarSeleccionados(dataGridViewExam);
-                if (alumnosSeleccionados.Count == 1)
+                if (ValidarAsistencia())
                 {
-                    if(ValidarNota())
-                    {
-                        List<Dictionary<string, string>> ListDictExam = Administrador.AgregarListaNotasExamen(textBox1.Text, alumnosSeleccionados[0], textBox2.Text, numericUpDown1.Value.ToString(), false);
-                        Archivar("NotasExamenes", ListDictExam);
-                        MessageBox.Show("Nota cargada con exito.", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Close();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Seleccione un solo alumno para cargar la nota.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else if (dataGridViewTclase.Visible)
-            {
-                GuardarSeleccionados(dataGridViewTclase);
-                if (alumnosSeleccionados.Count == 1)
-                {
-                    List<Dictionary<string, string>> ListDictTclase = Administrador.AgregarListaNotasTclase(textBox1.Text, alumnosSeleccionados[0], dateTimePicker1.Text, numericUpDown1.Value.ToString(), false);
-                    Archivar("NotasTrabajoClase", ListDictTclase);
-                    MessageBox.Show("Nota cargada con exito.", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    List<Dictionary<string, string>> ListDictAsistencia= Administrador.AgregarListaAsistencia(textBox1.Text, alumnosSeleccionados[0], dateTimePicker1.Text, comboBox1.Text, false);
+                    Archivar("Asistencias", ListDictAsistencia);
+                    MessageBox.Show("Asistencia cargada con exito.", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
-                    
                 }
-                else
-                {
-                    MessageBox.Show("Seleccione un solo alumno para cargar la nota.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un solo alumno para cargar la nota.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -309,13 +219,13 @@ namespace Forms2
             guardarLista(listaDict, nombreArchivo, "C:\\Users\\Admin\\source\\repos\\libreriaClases\\Datos\\");
         }
 
-        private bool ValidarNota()
+        private bool ValidarAsistencia()
         {
             bool valido = true;
-            if(textBox2.Text == "") 
+            if (comboBox1.Text != EstadoAlumno.Presente.ToString() && comboBox1.Text != EstadoAlumno.Ausente.ToString())
             {
                 valido = false;
-                MessageBox.Show("Areas obligatorias incompletas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Estado de alumno incorrecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return valido;
         }

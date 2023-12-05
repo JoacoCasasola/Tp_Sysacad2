@@ -7,47 +7,35 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Http;
+using System.Security;
 
 namespace libreriaClases
 {
-    internal class EnvioEmail
+    public class EnvioEmail
     {
-
-        public SmtpClient MiEmail()
+        public void EnviarCorreo(string emailDestino, string asunto, string mensaje)
         {
-            var smtpClient = new SmtpClient("smtp.example.com")
+            string emailOrigen = "joaquincasasola29@gmail.com";
+            try
             {
-                Port = 587,
-                Credentials = new NetworkCredential("tu_correo@example.com", "tu_contraseña"),
-                EnableSsl = true,
-            };
+                MailMessage mailMessage = new MailMessage();
+                mailMessage.From = new MailAddress(emailOrigen, "Joaco");
+                mailMessage.To.Add(emailDestino);
 
-            return smtpClient;
-        }
-        
-        public MailMessage CrearMensaje(string miEmail, string asunto, string cuerpoMensaje)
-        {
-            var mensaje = new MailMessage
+                mailMessage.Subject = asunto;
+                mailMessage.Body = mensaje;
+                mailMessage.IsBodyHtml = false;
+
+                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+                smtpClient.EnableSsl = true;
+                smtpClient.Credentials = new NetworkCredential(emailOrigen, "joa2003casa");
+
+                smtpClient.Send(mailMessage);
+            }
+            catch (Exception ex)
             {
-                From = new MailAddress(miEmail),
-                Subject = asunto,
-                Body = cuerpoMensaje,
-            };
-
-            return mensaje;
+                Console.WriteLine(ex);
+            }
         }
-
-        
-        public void AgregarDestinatario(MailMessage mensaje, string emailDestinatario)
-        {
-            mensaje.To.Add(emailDestinatario);
-        }      
-
-
-        public void EnviarMensaje(MailMessage mensaje, SmtpClient smtpClient)
-        {
-            smtpClient.Send(mensaje);
-        }
-        
     }
 }

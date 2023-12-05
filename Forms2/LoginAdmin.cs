@@ -78,9 +78,9 @@ namespace libreriaForms
 
         public void MostrarPanelAdmin()
         {
-            MessageBox.Show($"{GetNombreAdmin(textBox1.Text, "C:\\Users\\Admin\\source\\repos\\libreriaClases\\Datos\\Administradores.json")}, bienvenido/a al panel de administracion!", "SysAcad", MessageBoxButtons.OK, MessageBoxIcon.Information);
             PanelAdmin panelAdmin = new PanelAdmin();
             panelAdmin.Show();
+            MessageBox.Show($"{GetNombreAdmin(textBox1.Text, "C:\\Users\\Admin\\source\\repos\\libreriaClases\\Datos\\Administradores.json")}, bienvenido/a al panel de administracion!", "SysAcad", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void MostrarPanelEspera()

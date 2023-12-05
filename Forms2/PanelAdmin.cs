@@ -150,13 +150,18 @@ namespace Forms2
         }
 
 
-        private void btnInfoUsuario_Click_1(object sender, EventArgs e)
+
+        private void button2_Click(object sender, EventArgs e)
         {
-            AbrirFormHijo(new InfoAdmin());
+            AbrirFormHijo(new CondicionesDeInscripcion());
             OcultarSubMenu();
         }
 
-
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AbrirFormHijo(new ValidarAsisNotas());
+            OcultarSubMenu();
+        }
 
         private Form activarForm = null;
         private void AbrirFormHijo(Form formHijo)
@@ -175,7 +180,7 @@ namespace Forms2
             formHijo.Show();
         }
 
-        
+       
     }
 }
 

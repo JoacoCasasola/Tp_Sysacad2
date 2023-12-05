@@ -122,6 +122,7 @@
             this.btnConsultaHorario.Text = "Asistencias";
             this.btnConsultaHorario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConsultaHorario.UseVisualStyleBackColor = true;
+            this.btnConsultaHorario.Click += new System.EventHandler(this.btnConsultaHorario_Click);
             // 
             // btnInscripcionCurso
             // 

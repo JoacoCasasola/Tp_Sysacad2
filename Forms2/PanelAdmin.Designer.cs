@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnInfoUsuario = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panelListaEspera = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -54,6 +54,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelListaEspera.SuspendLayout();
             this.panelDeReportes.SuspendLayout();
@@ -67,7 +68,8 @@
             // 
             this.panelMenu.AutoScroll = true;
             this.panelMenu.BackColor = System.Drawing.Color.SteelBlue;
-            this.panelMenu.Controls.Add(this.btnInfoUsuario);
+            this.panelMenu.Controls.Add(this.button5);
+            this.panelMenu.Controls.Add(this.button2);
             this.panelMenu.Controls.Add(this.panelListaEspera);
             this.panelMenu.Controls.Add(this.button1);
             this.panelMenu.Controls.Add(this.panelDeReportes);
@@ -82,22 +84,22 @@
             this.panelMenu.Size = new System.Drawing.Size(200, 411);
             this.panelMenu.TabIndex = 0;
             // 
-            // btnInfoUsuario
+            // button2
             // 
-            this.btnInfoUsuario.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInfoUsuario.FlatAppearance.BorderSize = 0;
-            this.btnInfoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInfoUsuario.Font = new System.Drawing.Font("Trebuchet MS", 9F);
-            this.btnInfoUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnInfoUsuario.Location = new System.Drawing.Point(0, 719);
-            this.btnInfoUsuario.Name = "btnInfoUsuario";
-            this.btnInfoUsuario.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnInfoUsuario.Size = new System.Drawing.Size(183, 40);
-            this.btnInfoUsuario.TabIndex = 14;
-            this.btnInfoUsuario.Text = "Cuenta";
-            this.btnInfoUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInfoUsuario.UseVisualStyleBackColor = true;
-            this.btnInfoUsuario.Click += new System.EventHandler(this.btnInfoUsuario_Click_1);
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(0, 719);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(183, 40);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "Condiciones de inscripcion";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panelListaEspera
             // 
@@ -443,6 +445,23 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Fra";
             // 
+            // button5
+            // 
+            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(0, 759);
+            this.button5.Name = "button5";
+            this.button5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button5.Size = new System.Drawing.Size(183, 44);
+            this.button5.TabIndex = 15;
+            this.button5.Text = "Validar Notas/Asistencias";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // PanelAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -490,10 +509,11 @@
         private System.Windows.Forms.Button btnReporte1;
         private System.Windows.Forms.Button btnReporte5;
         private System.Windows.Forms.Button btnReporte4;
-        private System.Windows.Forms.Button btnInfoUsuario;
         private System.Windows.Forms.Panel panelListaEspera;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button5;
     }
 }

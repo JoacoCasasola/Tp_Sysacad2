@@ -1,0 +1,29 @@
+[
+  {
+    "Curso": "Curso3",
+    "Legajo Alumno": "783062",
+    "Examen": "1ºExamen",
+    "Nota": "7",
+    "Validacion": {
+        "Validado": false 
+    } 
+  },
+  {
+    "Curso": "Curso3",
+    "Legajo Alumno": "297201",
+    "Examen": "2ºExamen",
+    "Nota": "4",
+    "Validacion": {
+      "Validado": false 
+    }
+  },
+  {
+    "Curso": "Curso1",
+    "Legajo Alumno": "783062",
+    "Examen": "1ºExamen",
+    "Nota": "2",
+    "Validacion": {
+      "Validado": false 
+    }
+  }
+]

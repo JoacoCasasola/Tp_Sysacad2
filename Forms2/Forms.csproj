@@ -66,23 +66,11 @@
     <Compile Include="AgregarAlumnoLista.Designer.cs">
       <DependentUpon>AgregarAlumnoLista.cs</DependentUpon>
     </Compile>
-    <Compile Include="CargarNotaExamen.cs">
+    <Compile Include="CondicionesDeInscripcion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CargarNotaExamen.Designer.cs">
-      <DependentUpon>CargarNotaExamen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CargarNotaTClase.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CargarNotaTClase.Designer.cs">
-      <DependentUpon>CargarNotaTClase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CargarNotaTp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CargarNotaTp.Designer.cs">
-      <DependentUpon>CargarNotaTp.cs</DependentUpon>
+    <Compile Include="CondicionesDeInscripcion.Designer.cs">
+      <DependentUpon>CondicionesDeInscripcion.cs</DependentUpon>
     </Compile>
     <Compile Include="ConsultaDeHorarios.cs">
       <SubType>Form</SubType>
@@ -242,6 +230,12 @@
     <Compile Include="RegistraNotas.Designer.cs">
       <DependentUpon>RegistraNotas.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegistroAsistencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroAsistencias.Designer.cs">
+      <DependentUpon>RegistroAsistencias.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReporteAlumnosCarrera.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,17 +260,17 @@
     <Compile Include="ReporteListaEspera.Designer.cs">
       <DependentUpon>ReporteListaEspera.cs</DependentUpon>
     </Compile>
+    <Compile Include="ValidarAsisNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ValidarAsisNotas.Designer.cs">
+      <DependentUpon>ValidarAsisNotas.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AgregarAlumnoLista.resx">
       <DependentUpon>AgregarAlumnoLista.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CargarNotaExamen.resx">
-      <DependentUpon>CargarNotaExamen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CargarNotaTClase.resx">
-      <DependentUpon>CargarNotaTClase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CargarNotaTp.resx">
-      <DependentUpon>CargarNotaTp.cs</DependentUpon>
+    <EmbeddedResource Include="CondicionesDeInscripcion.resx">
+      <DependentUpon>CondicionesDeInscripcion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultaDeHorarios.resx">
       <DependentUpon>ConsultaDeHorarios.cs</DependentUpon>
@@ -366,6 +360,9 @@
     <EmbeddedResource Include="RegistraNotas.resx">
       <DependentUpon>RegistraNotas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RegistroAsistencias.resx">
+      <DependentUpon>RegistroAsistencias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReporteAlumnosCarrera.resx">
       <DependentUpon>ReporteAlumnosCarrera.cs</DependentUpon>
     </EmbeddedResource>
@@ -377,6 +374,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteListaEspera.resx">
       <DependentUpon>ReporteListaEspera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValidarAsisNotas.resx">
+      <DependentUpon>ValidarAsisNotas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

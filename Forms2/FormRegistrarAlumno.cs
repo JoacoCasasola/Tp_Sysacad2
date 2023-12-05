@@ -49,6 +49,11 @@ namespace Forms2
             guardarLista(CrearListDicts(), "Alumnos", "C:\\Users\\Admin\\source\\repos\\libreriaClases\\Datos\\");
             MessageBox.Show($"Datos cargados, Ahora {_nombre} es un alumno\n           Legajo: {_legajo} - Clave: {_clave}", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
+
+            EnvioEmail envioEmail = new EnvioEmail();
+            envioEmail.EnviarCorreo(_correo, "Prueba envio de email", $"Hola {_nombre}!\n Bienvenido a UTN Avellaneda, ahora eres alumno!");
+            MessageBox.Show("Email de confirmacion enviado.", "Email", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
         }
 
 
@@ -121,6 +126,7 @@ namespace Forms2
 
                 //DELEGADO
                 Validadores.ValidarDelegado validar = Validadores.VerificarCorreoElectronico;
+
                 if (!validar(textBox4.Text))
                 {
                     valido = false;

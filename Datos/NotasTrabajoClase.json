@@ -1,8 +1,11 @@
 [
   {
-    "Curso": null,
-    "Legajo Alumno": null,
-    "Fecha de clase": "sábado, 25 de noviembre de 2023",
-    "Nota": "4"
+    "Curso": "Curso2",
+    "Legajo Alumno": "783062",
+    "Fecha de clase": "miércoles, 15 de noviembre de 2023",
+    "Nota": "7",
+    "Validacion": {
+      "Validado": false 
+    }
   }
 ]

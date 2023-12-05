@@ -41,17 +41,28 @@
     "Direccion": "Calle 2018",
     "ID": "518805",
     "Clave": "ImZ3dIxr",
-    "Nivel": "Jefe de catedra"
+    "Nivel": "JefeDeCatedra"
   },
   {
-    "Nombre": "Fausto",
-    "Apellido": "Justo",
-    "DNI": "33872907",
-    "Correo": "fausto@gmail.com",
-    "Telefono": "11987367",
-    "Direccion": "Calle 403",
-    "ID": "400999",
-    "Clave": "yaf688sn",
+    "Nombre": "sdfsdf",
+    "Apellido": "wrer",
+    "DNI": "234324",
+    "Correo": "sdf@gmail.com",
+    "Telefono": "234234",
+    "Direccion": "234324",
+    "ID": "998032",
+    "Clave": "55Yburfj",
+    "Nivel": "Titular"
+  },
+  {
+    "Nombre": "fdgdf",
+    "Apellido": "dfgdfg",
+    "DNI": "345545",
+    "Correo": "dfg@gmail.com",
+    "Telefono": "234",
+    "Direccion": "234",
+    "ID": "668672",
+    "Clave": "NN1MVqsE",
     "Nivel": "Ayudante"
   }
 ]

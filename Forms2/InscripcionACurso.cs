@@ -1,5 +1,6 @@
 ﻿using Generic;
 using libreriaClases;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -74,11 +75,117 @@ namespace Forms2
         private void button2_Click(object sender, EventArgs e)
         {
             GuardarSeleccionados();
+
             foreach (string nombreCurso in cursosSeleccionados)
             {
-                VerificarCupo(nombreCurso);
+                if (ComprobarCondicionPromedio(nombreCurso, textBox1.Text))
+                {
+                    VerificarCupo(nombreCurso);
+                }
             }
         }
+
+
+        private bool ComprobarCondicionPromedio(string nombreCurso, string legajoAlumno)
+        {
+            string jsonCursos = "C:\\Users\\Admin\\source\\repos\\libreriaClases\\Datos\\Cursos.json";
+            string jsonAlumnos = "C:\\Users\\Admin\\source\\repos\\libreriaClases\\Datos\\Alumnos.json";
+
+            if (File.Exists(jsonCursos))
+            {
+                string jsonDataCursos = File.ReadAllText(jsonCursos);
+                string jsonDataAlumnos = File.ReadAllText(jsonAlumnos);
+
+                JArray jsonArrayCursos = JArray.Parse(jsonDataCursos);
+                JArray jsonArrayAlumnos = JArray.Parse(jsonDataAlumnos);
+
+                JObject curso = (JObject)jsonArrayCursos.FirstOrDefault(x => x["Nombre"].ToString() == nombreCurso);
+                JObject alumno = (JObject)jsonArrayAlumnos.FirstOrDefault(x => x["Legajo"].ToString() == legajoAlumno);
+
+                if (curso != null)
+                {
+                    JToken condicionesToken = curso["Condiciones"];
+                    if (condicionesToken != null && condicionesToken.HasValues)
+                    {
+                        bool condicion = (bool)condicionesToken["PromedioMinimo"];
+                        int promedio = (int)condicionesToken["Promedio"];
+
+                        if (alumno != null)
+                        {
+                            var notasAlumno = jsonArrayAlumnos
+                                .Where(x =>
+                                    x["Curso"] != null &&
+                                    x["Legajo Alumno"] != null &&
+                                    x["Curso"].ToString() == nombreCurso &&
+                                    x["Legajo Alumno"].ToString() == legajoAlumno)
+                                .Select(x => Convert.ToInt32(x["Nota"].ToString()));
+
+                            double promedioAlumno = notasAlumno.Any() ? notasAlumno.Average() : 0;
+
+                            if (condicion && promedioAlumno >= promedio)
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                MessageBox.Show($"No cumples con los requisitos de promedio minimo de {promedio}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                }
+
+                return false;
+            }
+
+            return false;
+        }
+
+
+        //private bool ComprobarCondicionInscripcion(string nombreCurso,string cursoEspecifico ,string legajoAlumno)
+        //{
+        //    try
+        //    {
+        //        string jsonAlumnos = "C:\\Users\\Admin\\source\\repos\\libreriaClases\\Datos\\Alumnos.json";
+        //        string jsonCursos = "C:\\Users\\Admin\\source\\repos\\libreriaClases\\Datos\\Cursos.json";
+
+        //        if (File.Exists(jsonAlumnos))
+        //        {
+        //            string jsonDataCursos = File.ReadAllText(jsonCursos);
+        //            string jsonDataAlumnos = File.ReadAllText(jsonAlumnos);
+
+        //            JArray jsonArrayCursos = JArray.Parse(jsonDataCursos);
+        //            JArray jsonArrayAlumnos = JArray.Parse(jsonDataAlumnos);
+
+        //            JObject curso = (JObject)jsonArrayCursos.FirstOrDefault(x => x["Nombre"].ToString() == nombreCurso);
+        //            JObject alumno = (JObject)jsonArrayAlumnos.FirstOrDefault(x => x["Legajo"].ToString() == legajoAlumno);
+
+        //            JToken condicionesToken = alumno["Condiciones"];
+        //            if (condicionesToken != null && condicionesToken.HasValues)
+        //            {
+        //                bool condicion = (bool)condicionesToken["InscripcionAnterior"];
+        //                string promedio = (string)condicionesToken["Curso"];
+
+        //                bool inscripcionExistente = jsonArrayAlumnos.Any(x =>
+        //                x["Curso"].ToString() == cursoEspecifico &&
+        //                x["Legajo"].ToString() == legajoAlumno);
+
+        //                if (inscripcionExistente && nombreCurso != cursoEspecifico)
+        //                {
+        //                    return true;
+        //                }
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error al cargar los datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+
+        //    return false;
+        //}
+
+
+
 
         private void GuardarSeleccionados()
         {
@@ -95,6 +202,8 @@ namespace Forms2
                 }
             }
         }
+
+       
 
         private void VerificarCupo(string nombreCurso)
         {
@@ -291,7 +400,7 @@ namespace Forms2
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al cargar los datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error al cargar los datos:" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else

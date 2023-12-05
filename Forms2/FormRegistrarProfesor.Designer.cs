@@ -227,7 +227,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Titular",
             "Ayudante",
-            "Jefe de catedra"});
+            "JefeDeCatedra"});
             this.comboBox1.Location = new System.Drawing.Point(164, 254);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(168, 21);

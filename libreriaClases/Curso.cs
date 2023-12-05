@@ -28,7 +28,7 @@ namespace libreriaClases
         [JsonProperty("Lista_espera")]
         public List<string> _listaEspera { get; set; }
 
-
+        public Condiciones Condiciones { get; set; }
 
         public Curso(string nombre, string idCurso, int cupoMax, int cupoActual,string descripcion,string horario,List<string> inscriptos,List<string> listaEspera)
         {

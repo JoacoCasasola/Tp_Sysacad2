@@ -42,10 +42,16 @@
             this.dataGridViewTp = new System.Windows.Forms.DataGridView();
             this.dataGridViewTclase = new System.Windows.Forms.DataGridView();
             this.btnSeleccionar = new System.Windows.Forms.Button();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTclase)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRegistrar
@@ -163,7 +169,7 @@
             this.dataGridViewExam.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewExam.Location = new System.Drawing.Point(48, 75);
             this.dataGridViewExam.Name = "dataGridViewExam";
-            this.dataGridViewExam.Size = new System.Drawing.Size(366, 194);
+            this.dataGridViewExam.Size = new System.Drawing.Size(366, 152);
             this.dataGridViewExam.TabIndex = 68;
             // 
             // dataGridViewTp
@@ -171,7 +177,7 @@
             this.dataGridViewTp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTp.Location = new System.Drawing.Point(48, 75);
             this.dataGridViewTp.Name = "dataGridViewTp";
-            this.dataGridViewTp.Size = new System.Drawing.Size(366, 194);
+            this.dataGridViewTp.Size = new System.Drawing.Size(366, 152);
             this.dataGridViewTp.TabIndex = 69;
             // 
             // dataGridViewTclase
@@ -179,7 +185,7 @@
             this.dataGridViewTclase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTclase.Location = new System.Drawing.Point(48, 75);
             this.dataGridViewTclase.Name = "dataGridViewTclase";
-            this.dataGridViewTclase.Size = new System.Drawing.Size(366, 194);
+            this.dataGridViewTclase.Size = new System.Drawing.Size(366, 152);
             this.dataGridViewTclase.TabIndex = 70;
             // 
             // btnSeleccionar
@@ -194,12 +200,66 @@
             this.btnSeleccionar.UseVisualStyleBackColor = true;
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(226, 294);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(55, 20);
+            this.numericUpDown1.TabIndex = 73;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(186, 294);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(34, 18);
+            this.label3.TabIndex = 72;
+            this.label3.Text = "Nota";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(153, 268);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(175, 20);
+            this.dateTimePicker1.TabIndex = 75;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(150, 246);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(36, 18);
+            this.label5.TabIndex = 74;
+            this.label5.Text = "Clase";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox2.Location = new System.Drawing.Point(153, 268);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(175, 20);
+            this.textBox2.TabIndex = 76;
+            // 
             // RegistraNotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(468, 372);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.btnTps);
             this.Controls.Add(this.dataGridViewTclase);
@@ -220,6 +280,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTclase)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,5 +302,10 @@
         private System.Windows.Forms.DataGridView dataGridViewTp;
         private System.Windows.Forms.DataGridView dataGridViewTclase;
         private System.Windows.Forms.Button btnSeleccionar;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

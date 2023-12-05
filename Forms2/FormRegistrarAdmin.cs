@@ -71,6 +71,10 @@ namespace Forms2
             guardarLista(CrearListDicts(),"Administradores", "C:\\Users\\Admin\\source\\repos\\libreriaClases\\Datos\\");
             MessageBox.Show($"Datos cargados, Ahora {_nombre} es administrador\n           ID: {_idAdmin} - Clave: {_clave}", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
+
+            EnvioEmail envioEmail = new EnvioEmail();
+            envioEmail.EnviarCorreo(_correo, "Prueba envio de email", $"Hola {_nombre}!\n Bienvenido a UTN Avellaneda, ahora eres administrador!");
+            MessageBox.Show("Email de confirmacion enviado.", "Email", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 

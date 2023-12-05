@@ -23,6 +23,10 @@ namespace Forms2
         public string _descripcion { get; set; }
         public int _cupoActual { get; set; }
         public string _horario { get; set; }
+        public bool _inscripcionAnterior { get; set; }
+        public string _cursoPreinscripto { get; set; }
+        public bool _primedioMinimo { get; set; }
+        public int _promedio { get; set; }
 
         public List<string> _ids { get; set; }
 
@@ -58,8 +62,12 @@ namespace Forms2
                 _descripcion = textBox4.Text;
                 _cupoActual = 0;
                 _ids = new List<string>();
+                _primedioMinimo = false;
+                _promedio = 0;
+                _inscripcionAnterior = false;
+                _cursoPreinscripto = "";
                 _listaEspera = new List<string>();
-
+                
                 string strCupoMax = textBox3.Text;
                 if (int.TryParse(strCupoMax, out int numeroEntero))
                 {
@@ -78,11 +86,9 @@ namespace Forms2
             }
         }
 
-
         public List<Dictionary<string, string>> CrearListDicts()
         {
-            
-            List<Dictionary<string, string>> ListdictAdmin = Administrador.AgregarAListaCursos(_nombre, _id, _cupoMax, _cupoActual, _descripcion, _ids, _listaEspera, _horario);
+            List<Dictionary<string, string>> ListdictAdmin = Administrador.AgregarAListaCursos(_nombre, _id, _cupoMax, _cupoActual, _descripcion, _ids, _primedioMinimo, _promedio, _inscripcionAnterior, _cursoPreinscripto, _listaEspera, _horario);
             return ListdictAdmin;
         }
 

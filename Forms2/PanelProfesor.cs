@@ -56,6 +56,13 @@ namespace libreriaForms
             AbrirFormHijo(new RegistraNotas());
         }
 
+        private void btnConsultaHorario_Click(object sender, EventArgs e)
+        {
+            OcultarSubMenu();
+            AbrirFormHijo(new RegistroAsistencias());
+        }
+
+
         private void btnUsuario_Click(object sender, EventArgs e)
         {
             OcultarSubMenu();
